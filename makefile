@@ -21,5 +21,24 @@ DTFecha.o: DTFecha.cpp DTFecha.h
 	$(CC) $(OPCIONES) -c DTFecha.cpp -o DTFecha.o
 
 DTRefer.o: DTRefer.cpp DTRefer.h
-	$(CC) $(OPCIONES) -c DTRefer.cpp -o 
+	$(CC) $(OPCIONES) -c DTRefer.cpp -o DTRefer.o
 
+Investigador.o: DTFecha.o Investigador.cpp Investigador.h
+	$(CC) $(OPCIONES) -c Investigador.cpp -o Investigador.o
+
+Publicacion.o: DTFecha.o DTRefer.o Publicacion.cpp Publicacion.h
+	$(CC) $(OPCIONES) -c Publicacion.cpp -o Investigador.o
+
+PaginaWeb.o: Publicacion.o PaginaWeb.cpp PaginaWeb.h
+	$(CC) $(OPCIONES) -c PaginaWeb.cpp -o PaginaWeb.o
+
+Libro.o: Publicacion.o Libro.cpp Libro.h
+	$(CC) $(OPCIONES) -c Libro.cpp -o PaginaWeb.o
+ 
+ArticuloRevista.o: Publicacion.o Libro.cpp Libro.h
+	$(CC) $(OPCIONES) -c ArticuloRevista.cpp -o PaginaWeb.o
+ 
+Clean:
+	rm -f $(OBJETOS) ejec
+
+##Entrega Instricion que crearia la entrega 
