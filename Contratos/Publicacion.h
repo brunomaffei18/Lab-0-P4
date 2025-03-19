@@ -1,5 +1,5 @@
-#ifndef PUBLICACION
-#define PUBLICACION
+#ifndef PUBLICACION_H
+#define PUBLICACION_H
 
 #include <string>
 
