@@ -27,6 +27,8 @@ Investigador::Investigador(std::string nombre,  std::string orcid ,std::string i
     
    for (auto it= misPub.begin(); it != misPub.end(); ++it)
    {
+    //faltan implementar las funcines de getfechapub y la de getdoi
+    //son implementadas en publicacion 
      Publicacion*pub=it->first;
      if (DTFecha::compararFechas(getfechaPub(pub),desde)){
       if (it->second==palabra ){
