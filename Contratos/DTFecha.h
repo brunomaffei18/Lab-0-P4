@@ -11,7 +11,7 @@ class DTFecha{
   int get_Dia();
   int get_Mes();
   int get_anio();
- 
+  bool compararFechas(DTFecha fecha1, DTFecha fecha2);
  
 };
 
