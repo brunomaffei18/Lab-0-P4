@@ -1,6 +1,8 @@
 #ifndef INVESTIGACION_H
 #define INVESTIGACION_H
 
+
+#include <map>
 #include <set>
 #include <string>
 #include "DTFecha.h"
@@ -8,17 +10,19 @@
 #include <ostream>
 #include <sstream>
 
+using namespace std;
+
 class Investigador
 {
 private:
-  std::string ORCID;
-  std::string Nombre;
-  std::string Institucion;
-  
+  string ORCID;
+  string Nombre;
+  string Institucion;
+  map<Publicacion*, string>misPub;
 public:
-    Investigador(std::string nombre,  std::string orcid ,std::string institucion);
-    std::string toString();
-    std::set<std::string> listaPublicaciones(DTFecha desde, std::string palabra);
+    Investigador(string nombre,  string orcid ,string institucion);
+    string toString();
+    set<string> listaPublicaciones(DTFecha desde, string palabra);
 };
 
 
