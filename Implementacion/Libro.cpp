@@ -1,8 +1,7 @@
 #include "../Contratos/Libro.h"
 
-
-Libro::Libro(string editorial, vector <string> palabrasDestacadas,DTFecha fecha, string titulo, string doi ){
-  Publicacion(doi,  titulo, fecha);;
+//no se si esto esta bien 
+Libro::Libro(string editorial, vector <string> palabrasDestacadas,DTFecha fecha, string titulo, string doi ):Publicacion(doi,  titulo, fecha){
     this->editorial=editorial;
     this->palabrasDestacadas=palabrasDestacadas;
 };
