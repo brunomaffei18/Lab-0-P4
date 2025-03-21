@@ -1,6 +1,8 @@
 #include <string>
-#include "../Contratos/DTFecha.h"
+#include <iostream>
 #include <list>
+
+#include "../Contratos/DTFecha.h"
 
 using namespace std;
 
@@ -13,6 +15,5 @@ private:
     list<string> autores;
 
 public:
-    DTRefer(string DOI, strig titulo, DTFecha fecha); //al implementarlo autores hay q declararlo vacio
-    ~DTRefer();
+    DTRefer(string DOI, string titulo, DTFecha fecha); //al implementarlo autores hay q declararlo vacio
 };
