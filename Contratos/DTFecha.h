@@ -6,7 +6,7 @@
 class DTFecha{
  private:
   int Dia, Mes,Anio;
-  public:
+public:
   DTFecha(int dia,int mes, int anio);
   int get_Dia();
   int get_Mes();

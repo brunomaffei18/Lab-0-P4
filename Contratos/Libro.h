@@ -5,9 +5,10 @@
 #include <algorithm>
 #include "Publicacion.h"
 #include <set>
+#include "../Contratos/Publicacion.h"
 using namespace std;
 
-class Libro
+class Libro : public Publicacion
 {
 private:
    string editorial;

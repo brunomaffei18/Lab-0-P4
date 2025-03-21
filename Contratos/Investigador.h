@@ -20,9 +20,16 @@ private:
   string Institucion;
   map<Publicacion*, string>misPub;
 public:
+  //creadores
     Investigador(string nombre,  string orcid ,string institucion);
+  //destructor
+    ~Investigador();
+  //getters
     string toString();
-    set<string> listaPublicaciones(DTFecha desde, string palabra);
+    // set<string> listaPublicaciones(DTFecha desde, string palabra);
+    void listarPublicaciones(DTFecha fecha, std::string palabra);
+  //setters
+    void setMapPub();
 };
 
 
