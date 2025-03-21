@@ -3,7 +3,7 @@
 
 
 #include <map>
-#include <set>
+#include <vector>
 #include <string>
 #include "DTFecha.h"
 #include "Publicacion.h"
@@ -26,8 +26,8 @@ public:
     ~Investigador();
   //getters
     string toString();
-    // set<string> listaPublicaciones(DTFecha desde, string palabra);
-    void listarPublicaciones(DTFecha fecha, std::string palabra);
+    vector<string> listaPublicaciones(DTFecha desde, string palabra);
+    //void listarPublicaciones(DTFecha fecha, std::string palabra);
   //setters
     void setMapPub();
 };

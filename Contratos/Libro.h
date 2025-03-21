@@ -4,7 +4,7 @@
 #include<string>
 #include <algorithm>
 #include "Publicacion.h"
-#include <set>
+#include <vector>
 #include "../Contratos/Publicacion.h"
 using namespace std;
 
@@ -12,9 +12,9 @@ class Libro : public Publicacion
 {
 private:
    string editorial;
-   set <string> palabrasDestacadas;
+   vector <string> palabrasDestacadas;
 public:
-    Libro(string editorial, set<string> palabrasDestacadas,DTFecha fecha, string titulo, string doi );
+    Libro(string editorial, vector<string> palabrasDestacadas,DTFecha fecha, string titulo, string doi );
    bool contienePalabra(string palabra);
 };
 

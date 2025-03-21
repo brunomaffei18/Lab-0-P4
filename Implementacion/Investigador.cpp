@@ -22,8 +22,8 @@ Investigador::Investigador(std::string nombre,  std::string orcid ,std::string i
 }
 
 
-  set<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
-    set <string> resultado;
+  vector<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
+    vector <string> resultado;
     
    for (auto it= misPub.begin(); it != misPub.end(); ++it)
    {
@@ -32,7 +32,7 @@ Investigador::Investigador(std::string nombre,  std::string orcid ,std::string i
      Publicacion*pub=it->first;
      if (DTFecha::compararFechas(getfechaPub(pub),desde)){
       if (it->second==palabra ){
-        resultado.insert(it->getDoi);
+        resultado.push_back(it->getDT());
       }
      }
    }

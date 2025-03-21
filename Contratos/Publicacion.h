@@ -3,7 +3,7 @@
 
 #include <string>
 #include <map>
-
+#include "../Contratos/Investigador.h"
 #include "../Contratos/DTRefer.h"
 #include "../Contratos/DTFecha.h"
 class Publicacion{
