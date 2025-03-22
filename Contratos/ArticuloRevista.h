@@ -1,5 +1,6 @@
 #include <string>
 #include "../Contratos/Publicacion.h"
+using namespace std;
 class ArticuloRevista : public Publicacion{
 private:
     std::string revista;
