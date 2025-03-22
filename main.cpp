@@ -3,6 +3,7 @@
 #include <map>
 #include "../Contratos/Publicacion.h"
 #include "../Contratos/Investigador.h"
+#include "../Contratos/DTRefer.h"
 
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
@@ -12,12 +13,12 @@ std::map<std::string, Investigador*> map_investigadores;
 
 void coleccion_guardarPublicacion(Publicacion* pub){
 	publicaciones.push_back(pub);
-	std::pair<std::string, Publicacion*> entry(pub->getDOI(), pub);
+	std::pair<std::string, Publicacion*> entry(pub->getDT().getDOI(), pub);
     map_publicaciones.insert(entry);
 }
 void coleccion_eliminarPublicacion(Publicacion* pub){
 	publicaciones.remove(pub);
-	map_publicaciones.erase(pub->getDOI());
+	map_publicaciones.erase(pub->getDT().getDOI());
 }
 
 void coleccion_guardarInvestigador(Investigador* inv){
@@ -91,8 +92,8 @@ int main() {
 	parte_j();
 	std::cout << "parte_k" <<  std::endl;
 	parte_k();
-	std::cout << "cleanUp" <<  std::endl;
-	cleanUp();
+//	std::cout << "cleanUp" <<  std::endl;
+//	cleanUp();
 	std::cout << "fin" <<  std::endl;
 
 	return 0;
