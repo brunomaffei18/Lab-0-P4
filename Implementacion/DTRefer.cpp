@@ -13,12 +13,12 @@ DTRefer :: DTRefer(string DOI, string titulo, DTFecha fecha){
 ostream& operator<<(ostream& os, DTRefer& dt) {
     os << dt.getDOI() << "->" << dt.getTitulo() << " (" << dt.getFecha() << ") /";
     
-    vector<string> autores = dt.getAutores();  // Usamos el getter de autores
+    vector<string> autores = dt.getAutores();
     for (size_t i = 0; i < autores.size(); i++) {
         os << autores[i];
         if (i < autores.size() - 1) {
-            os << ", ";  // Separador entre autores
+            os << ", ";
         }
     }
-    return os;  // Retornamos el flujo modificado
+    return os;
 }

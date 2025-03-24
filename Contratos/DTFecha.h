@@ -9,13 +9,13 @@ class DTFecha{
 public:
 DTFecha();
   DTFecha(int dia,int mes, int anio);
-  int get_Dia();
-  int get_Mes();
-  int get_anio();
+  int getDia();
+  int getMes();
+  int getAnio();
   bool compararFechas(DTFecha fecha1, DTFecha fecha2);
  
 };
 
-
+std::ostream& operator<<(std::ostream& os, const DTFecha& dt);
 
 #endif
