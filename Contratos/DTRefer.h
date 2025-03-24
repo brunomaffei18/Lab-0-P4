@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include <list>
+#include <vector>
 
 #include "../Contratos/DTFecha.h"
 
@@ -19,5 +19,10 @@ public:
     string getDOI();
     string getTitulo();
     DTFecha getFecha();
-    list<string> getAutores();
+    vector<string> getAutores();
+
+    string toString();
+
 };
+
+ostream& operator<<(ostream& os, const DTRefer& dt);
