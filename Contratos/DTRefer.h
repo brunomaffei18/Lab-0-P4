@@ -16,4 +16,8 @@ private:
 
 public:
     DTRefer(string DOI, string titulo, DTFecha fecha); //al implementarlo autores hay q declararlo vacio
+    string getDOI();
+    string getTitulo();
+    DTFecha getFecha();
+    list<string> getAutores();
 };
