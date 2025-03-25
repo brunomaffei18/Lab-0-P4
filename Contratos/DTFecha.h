@@ -12,7 +12,7 @@ DTFecha();
   int getDia();
   int getMes();
   int getAnio();
-  bool compararFechas(DTFecha fecha1, DTFecha fecha2);
+  bool esPosterior(DTFecha fecha2);
  
 };
 

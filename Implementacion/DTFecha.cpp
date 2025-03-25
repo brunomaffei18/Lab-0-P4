@@ -17,21 +17,22 @@ int DTFecha::getAnio(){
 }
 
 
-//Si fecha 1 es mayor que fecha 2 devuelve true sino devuelve false 
- bool DTFecha::compararFechas(DTFecha fecha1,DTFecha fecha2){
-    if (fecha1.getAnio()>fecha2.getAnio())
+
+//Si fecha 1 es mayor que fecha 2 devuelve true sino devuelve false  
+ bool DTFecha::esPosterior(DTFecha fecha2){
+    if (this->Anio>fecha2.getAnio())
     {
         return true;
     }else{
-        if (fecha1.getAnio()==fecha2.getAnio())
+        if (this->Anio==fecha2.getAnio())
         {
-            if (fecha1.getMes()>fecha2.getMes())
+            if (this->Mes>fecha2.getMes())
             {
                 return true;
             }else{
-                if (fecha1.getMes()==fecha2.getMes())
+                if (this->Mes==fecha2.getMes())
                 {
-                    if (fecha1.getDia()>fecha2.getDia())
+                    if (this->Dia>fecha2.getDia())
                     {
                         return true;
                     }else{
