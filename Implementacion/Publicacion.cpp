@@ -19,10 +19,10 @@ Publicacion::Publicacion(std::string DOI, std::string titulo, DTFecha fecha){
 };
 
 DTRefer Publicacion::getDT(){
-    std::set<std::string>autores;
+    std::vector<std::string>autores;
     for (auto i = misInvestigadores.begin(); i != misInvestigadores.end(); i++)
     {
-        autores.insert(i->first->getNombe());
+        autores.push_back(i->first->getNombre());
     }
     
     DTRefer Refer = DTRefer(DOI,titulo,fecha,autores);
