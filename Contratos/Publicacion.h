@@ -20,9 +20,9 @@ class Publicacion{
   ~Publicacion();
  //getters
 
-  DTFecha getFechaPub(Publicacion Pub);
-  std::string getTitulo(Publicacion Pub);
-  std::string getDoi(Publicacion Pub);
+  DTFecha getFechaPub();
+  std::string getTitulo();
+  std::string getDoi();
  //setters 
   void setMapInve();
  //Funciones
