@@ -6,6 +6,7 @@
 #include "../Contratos/Investigador.h"
 #include "../Contratos/DTRefer.h"
 #include "../Contratos/DTFecha.h"
+
 class Publicacion{
  private:
   std::string DOI;
@@ -18,11 +19,17 @@ class Publicacion{
  //destructores
   ~Publicacion();
  //getters
-  DTRefer getDT();
-  bool contienePalabra(std::string palabra);
-  void imprimir();
+
+  DTFecha getFechaPub(Publicacion Pub);
+  std::string getTitulo(Publicacion Pub);
+  std::string getDoi(Publicacion Pub);
  //setters 
   void setMapInve();
+ //Funciones
+ DTRefer getDT();
+ bool contienePalabra(std::string palabra);
+ void imprimir();
+  
 };
 
 
