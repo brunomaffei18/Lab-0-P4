@@ -26,13 +26,10 @@ public:
     ~Investigador();
   //getters
     string getORCID();
-<<<<<<< HEAD
-    string getNombre();
     string getInstitucion();
-=======
-    string getNombe();
+    string getNombre();
     string toString();
->>>>>>> d6eb076 (Publicacion.cpp a medias, debo mofdificar DTRefer)
+
     vector<string> listaPublicaciones(DTFecha desde, string palabra);
     //void listarPublicaciones(DTFecha fecha, std::string palabra);
   //setters
