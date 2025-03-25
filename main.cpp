@@ -70,9 +70,18 @@ void parte_c(){
 }
 
 void parte_d(){
+	for (auto publi : publicaciones)
+	{
+		std::cout<<publi->getDT() << std::endl;
+	}
 }
 
 void parte_e(){
+    Investigador * persona1 = new Investigador("Carla Oliveri","0000-0003-1234-5678","Universidad de la Republica");
+    coleccion_guardarInvestigador(persona1);
+
+	Investigador * persona2 = new Investigador("Alberto Santos","0000-0001-8765-4321","Instituto Tecnico");
+    coleccion_guardarInvestigador(persona2);
 }
 
 void parte_f(){
