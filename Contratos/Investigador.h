@@ -26,8 +26,12 @@ public:
     ~Investigador();
   //getters
     string getORCID();
+<<<<<<< HEAD
     string getInstitucion();
     string getNombre();
+=======
+    string getNombe();
+>>>>>>> Publicacion
     string toString();
 
     vector<string> listaPublicaciones(DTFecha desde, string palabra);
