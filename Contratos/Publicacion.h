@@ -1,8 +1,11 @@
 #ifndef PUBLICACION_H
 #define PUBLICACION_H
 
-#include <string>
+#include <utility>      
+#include <string>       
+#include <iostream> 
 #include <map>
+#include <vector>
 #include "../Contratos/Investigador.h"
 #include "../Contratos/DTRefer.h"
 #include "../Contratos/DTFecha.h"
@@ -12,7 +15,9 @@ class Publicacion{
   std::string DOI;
   std::string titulo;
   DTFecha fecha;
-  map <Investigador*, std::string> misInvestigadores;
+  map <Investigador*, std::string> misInvestigadores; //me parece que el orden es al reves, el primer valor seria la clave osea string y el segundo la clave es decir Investigador
+
+
  public:
  //creadores
   Publicacion(std::string DOI, std::string titulo, DTFecha fecha);
@@ -27,7 +32,8 @@ class Publicacion{
   void setMapInve();
  //Funciones
  DTRefer getDT();
- bool contienePalabra(std::string palabra);
+ //virtula y =0 parar que sea abstracta
+ virtual bool contienePalabra(std::string palabra) = 0;
  void imprimir();
   
 };
