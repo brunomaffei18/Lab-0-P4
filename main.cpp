@@ -93,6 +93,10 @@ void parte_f(){
 }
 
 void parte_g(){
+	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	Investigador * alberto = coleccion_getInvestigador("0000-0001-8765-4321");
+
+	
 }
 
 void parte_h(){
