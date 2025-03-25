@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 DTRefer :: DTRefer(string DOI, string titulo, DTFecha fecha, vector<string>autores){
     this->fecha = fecha;
     this->DOI = DOI;
