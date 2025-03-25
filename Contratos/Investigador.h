@@ -26,11 +26,14 @@ public:
     ~Investigador();
   //getters
     string getORCID();
-    string toString();
+    string getNombre();
+    string getInstitucion();
     vector<string> listaPublicaciones(DTFecha desde, string palabra);
     //void listarPublicaciones(DTFecha fecha, std::string palabra);
   //setters
     void setMapPub();
+  //Funciones
+    string toString();
 };
 
 
