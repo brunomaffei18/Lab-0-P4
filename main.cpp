@@ -1,9 +1,12 @@
 #include <iostream>
 #include <list>
 #include <map>
-#include "../Contratos/Publicacion.h"
-#include "../Contratos/Investigador.h"
-#include "../Contratos/DTRefer.h"
+#include "Contratos/Publicacion.h"
+#include "Contratos/Investigador.h"
+#include "Contratos/DTRefer.h"
+#include "Contratos/ArticuloRevista.h"
+#include "Contratos/PaginaWeb.h"
+#include "Contratos/Libro.h"
 
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
@@ -36,18 +39,49 @@ Publicacion* coleccion_getPublicacion(std::string DOI){
 }
 
 void parte_a(){
+    string extracto1 = "Introduccion a los principios fundamentales de la programacion orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.";
+    DTFecha fecha1 = DTFecha(15,5,2023);
+    ArticuloRevista * revista1 = new ArticuloRevista("Programación Avanzada",extracto1,"10.1234/abc123","Fundamentos de POO",fecha1);
+    coleccion_guardarPublicacion(revista1);
+
+    string extracto2 = "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.";
+    DTFecha fecha2 = DTFecha(10,2,2024);
+    ArticuloRevista * revista2 = new ArticuloRevista("Modelado de Software",extracto2,"10.4567/jkl012","Utilidad de diagramas UML",fecha2);
+    coleccion_guardarPublicacion(revista2);
 }
 
 void parte_b(){
+    DTFecha fecha1 = DTFecha(20,8,2022);
+    vector<string> destacadas1 = {"Diseno","OOP","Class"};
+    Libro * libro1 = new Libro("Software Design", destacadas1,fecha1,"Patrones de Diseno en c++","10.2345/def456");
+    coleccion_guardarPublicacion(libro1);
+
+    DTFecha fecha2 = DTFecha(20,8,2022);
+    vector<string> destacadas2 = {"Diagramas","UML","Software","Modelado"};
+    Libro * libro2 = new Libro("IEEE", destacadas2,fecha2,"Guia de UML","10.5678/mno345");
+    coleccion_guardarPublicacion(libro2);
 }
 
 void parte_c(){
+    string contenido = "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.";
+    DTFecha fecha = DTFecha(20,10,2024);
+    PaginaWeb * pagina = new PaginaWeb("www.umlparaprincipiantes.com",contenido,"10.3456/ghi789","Diagramas para Principiantes",fecha);
+    coleccion_guardarPublicacion(pagina);
 }
 
 void parte_d(){
+	for (auto publi : publicaciones)
+	{
+		std::cout<<publi->getDT() << std::endl;
+	}
 }
 
 void parte_e(){
+    Investigador * persona1 = new Investigador("Carla Oliveri","0000-0003-1234-5678","Universidad de la Republica");
+    coleccion_guardarInvestigador(persona1);
+
+	Investigador * persona2 = new Investigador("Alberto Santos","0000-0001-8765-4321","Instituto Tecnico");
+    coleccion_guardarInvestigador(persona2);
 }
 
 void parte_f(){
