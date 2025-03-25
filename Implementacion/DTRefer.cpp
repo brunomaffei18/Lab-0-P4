@@ -3,11 +3,11 @@
 #include <vector>
 
 
-DTRefer :: DTRefer(string DOI, string titulo, DTFecha fecha){
+DTRefer :: DTRefer(string DOI, string titulo, DTFecha fecha, vector<string>autores){
     this->fecha = fecha;
     this->DOI = DOI;
     this->titulo = titulo;
-    this->autores = vector<string>();
+    this->autores = autores;
 }
 
 ostream& operator<<(ostream& os, DTRefer& dt) {

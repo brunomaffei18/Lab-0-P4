@@ -12,15 +12,14 @@ private:
     string DOI;
     string titulo;
     DTFecha fecha;
-    list<string> autores;
+    vector<string> autores;
 
 public:
-    DTRefer(string DOI, string titulo, DTFecha fecha); //al implementarlo autores hay q declararlo vacio
-    string getDOI();
+    DTRefer(string DOI, string titulo, DTFecha fecha,vector<string>autores);
     string getTitulo();
     DTFecha getFecha();
     vector<string> getAutores();
-
+    string getDOI();
     string toString();
 
 };
