@@ -21,7 +21,7 @@ Investigador::Investigador(std::string nombre,  std::string orcid ,std::string i
 
 }
 
-
+//
   vector<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
     vector <string> resultado;
     
