@@ -6,7 +6,7 @@
         {
         this->contenido=contenido;
         this->url=url;
-        Publicacion(DOI,titulo,fecha);
+       
     };
   //destructor
    PaginaWeb:: ~PaginaWeb(){
@@ -14,7 +14,7 @@
    };
   //getters
     bool PaginaWeb::contienePalabra(std::string palabra){
-        return contenido.find(palabra)!=NULL;
+        return contenido.find(palabra)!=string::npos;
     }
 
 
