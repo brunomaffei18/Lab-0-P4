@@ -23,7 +23,9 @@ string Investigador::getORCID(){
 string Investigador::getNombre(){
   return Nombre;
 }
-
+map<Publicacion*,string> Investigador::getMapPub(){
+  return this->misPub;
+}
 //Funciones
 vector<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
   vector <string> resultado;

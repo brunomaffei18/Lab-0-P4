@@ -10,5 +10,8 @@ public:
   //destructor
     ~PaginaWeb();
   //getters
+  string getUrl();
+  string getContenido();
+ //funciones
     bool contienePalabra(std::string palabra);
 };

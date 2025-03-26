@@ -29,7 +29,7 @@ public:
     string getInstitucion();
     string getNombre();
     string toString();
-
+    map<Publicacion*,string> getMapPub();
     vector<string> listaPublicaciones(DTFecha desde, string palabra);
     //void listarPublicaciones(DTFecha fecha, std::string palabra);
   //setters

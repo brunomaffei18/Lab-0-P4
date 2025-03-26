@@ -14,8 +14,18 @@ private:
    string editorial;
    vector <string> palabrasDestacadas;
 public:
-    Libro(string editorial, vector<string> palabrasDestacadas,DTFecha fecha, string titulo, string doi );
-   bool contienePalabra(string palabra);
+//creador   
+Libro(string editorial, vector<string> palabrasDestacadas,DTFecha fecha, string titulo, string doi );
+//destructor
+~Libro();
+
+//getters
+string getEditorial();
+vector<string> getPalabraDestacada();
+
+//funciones
+
+bool contienePalabra(string palabra);
 };
 
 

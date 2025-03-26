@@ -8,6 +8,14 @@ ArticuloRevista::ArticuloRevista(string revista, string extracto, string DOI, st
 ArticuloRevista::~ArticuloRevista(){
     Publicacion::~Publicacion();
 }
+string ArticuloRevista::getExtracto(){
+    return this->extracto;
+}
+string ArticuloRevista::getRevista(){
+    return this->revista;
+}
+
+
 
 bool ArticuloRevista::contienePalabra(string palabra){
     return extracto.find(palabra)!=string::npos;

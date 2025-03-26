@@ -11,5 +11,8 @@ public:
   //destructor
     ~ArticuloRevista();
   //getters
+    string getRevista();
+    string getExtracto();
+
     bool contienePalabra(std::string palabra);
 };

@@ -13,6 +13,15 @@
 
    };
   //getters
+  string PaginaWeb::getContenido(){
+    return this->contenido;
+  }
+  string PaginaWeb::getUrl(){
+    return this->url;
+  }
+
+
+  //funciones
     bool PaginaWeb::contienePalabra(std::string palabra){
         return contenido.find(palabra)!=string::npos;
     }
