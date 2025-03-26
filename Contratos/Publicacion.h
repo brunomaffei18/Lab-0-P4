@@ -15,7 +15,7 @@ class Publicacion{
   std::string DOI;
   std::string titulo;
   DTFecha fecha;
-  map <Investigador*, std::string> misInvestigadores; //me parece que el orden es al reves, el primer valor seria la clave osea string y el segundo la clave es decir Investigador
+  map <std::string, Investigador*> misInvestigadores; //me parece que el orden es al reves, el primer valor seria la clave osea string y el segundo la clave es decir Investigador
 
 
  public:
@@ -29,7 +29,9 @@ class Publicacion{
   std::string getTitulo();
   std::string getDoi();
  //setters 
-  void setMapInve();
+  void setMapInve(string, Investigador *Investigador);
+  void unSetMapInve(string);
+
  //Funciones
  DTRefer getDT();
  //virtula y =0 parar que sea abstracta
