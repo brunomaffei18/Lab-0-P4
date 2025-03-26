@@ -96,7 +96,22 @@ void parte_g(){
 	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	Investigador * alberto = coleccion_getInvestigador("0000-0001-8765-4321");
 
-	
+	std::vector<std::string> nuevasCarla = {"10.1234/abc123","10.4567/jkl012","10.5678/mno345","10.3456/ghi789"};
+    std::vector<std::string> nuevasAlberto = {"10.1234/abc123","10.2345/def456","10.4567/jkl012"};
+
+	//Publicaciones de Carla
+    for (auto doi : nuevasCarla) {
+        Publicacion* publi = coleccion_getPublicacion(doi);
+		carla->agregarPublicacionAInvestigador(publi);
+		publi->setMapInve(carla->getORCID(),carla);
+    }
+
+	//Publicaciones de Alberto
+    for (auto doi : nuevasAlberto) {
+        Publicacion* publi = coleccion_getPublicacion(doi);
+		alberto->agregarPublicacionAInvestigador(publi);
+		publi->setMapInve(alberto->getORCID(),alberto);
+    }
 }
 
 void parte_h(){
