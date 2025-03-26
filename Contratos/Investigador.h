@@ -18,7 +18,7 @@ private:
   string ORCID;
   string Nombre;
   string Institucion;
-  map<Publicacion*, string>misPub;
+  map<string,Publicacion* >misPub;
 public:
   //creadores
     Investigador(string nombre,  string orcid ,string institucion);
@@ -29,11 +29,14 @@ public:
     string getInstitucion();
     string getNombre();
     string toString();
-    map<Publicacion*,string> getMapPub();
-    vector<string> listaPublicaciones(DTFecha desde, string palabra);
+    map<string,Publicacion*> getMapPub();
+    vector<string> listarPublicaciones(DTFecha desde, string palabra);
     //void listarPublicaciones(DTFecha fecha, std::string palabra);
+
+  void quitarpublicacion(string DOI);
+
   //setters
-    void setMapPub();
+    void agregarPublicacionAInvestigador(Publicacion* Pub);
   //Funciones
     string toString();
 };

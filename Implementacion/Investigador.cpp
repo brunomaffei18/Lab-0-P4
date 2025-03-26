@@ -23,19 +23,19 @@ string Investigador::getORCID(){
 string Investigador::getNombre(){
   return Nombre;
 }
-map<Publicacion*,string> Investigador::getMapPub(){
+map<string,Publicacion*> Investigador::getMapPub(){
   return this->misPub;
 }
 //Funciones
-vector<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
+vector<string> Investigador::listarPublicaciones(DTFecha desde,string DOI){
   vector <string> resultado;
   
   for (auto it= misPub.begin(); it != misPub.end(); ++it)
   {
   
-    Publicacion*pub=it->first;
+    Publicacion*pub=it->second;
     if (pub->getFechaPub().esPosterior(desde)==true){
-    if (it->second==palabra ){
+    if (it->first==DOI ){
       resultado.push_back(pub->getDoi());
     }
     }
@@ -43,6 +43,16 @@ vector<string> Investigador::listaPublicaciones(DTFecha desde,string palabra){
   
   return resultado;
 }
+void Investigador:: agregarPublicacionAInvestigador(Publicacion*Pub){
+       misPub.insert(std::pair<string,Publicacion*>(Pub->getDoi(),Pub));
+}
+
+
+void Investigador::quitarpublicacion(string DOI){
+ misPub.erase(DOI);
+ 
+}
+
 
 string Investigador::toString() {
     return ORCID + "->" + Nombre + "/" + Institucion;
