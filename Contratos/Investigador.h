@@ -20,23 +20,20 @@ private:
   string Institucion;
   map<string,Publicacion* >misPub;
 public:
-  //creadores
+  //Creador y Destructor
     Investigador(string nombre,  string orcid ,string institucion);
-  //destructor
     ~Investigador();
-  //getters
+  //Geters
     string getORCID();
     string getInstitucion();
     string getNombre();
-    string toString();
     map<string,Publicacion*> getMapPub();
-    vector<string> listarPublicaciones(DTFecha desde, string palabra);
-    //void listarPublicaciones(DTFecha fecha, std::string palabra);
 
-  void quitarpublicacion(string DOI);
-
-  //setters
-    void agregarPublicacionAInvestigador(Publicacion* Pub);
+  //Manejo de publicaciones.
+  void agregarPublicacion(Publicacion* Pub);
+  void removerPublicacion(string DOI);
+  vector<string> listarPublicaciones(DTFecha desde, string palabra);
+  
   //Funciones
     string toString();
 };
