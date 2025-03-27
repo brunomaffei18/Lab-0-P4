@@ -115,6 +115,13 @@ void parte_g(){
 }
 
 void parte_h(){
+	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	DTFecha fecha(10,12,2023);
+	vector<string> listado = carla->listarPublicaciones(fecha,"UML");
+
+	for (auto pub : listado) {
+            std::cout << pub << std::endl;
+        }
 }
 
 void parte_i(){
