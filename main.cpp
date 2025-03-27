@@ -125,14 +125,54 @@ void parte_h(){
 }
 
 void parte_i(){
+	Publicacion * aBorrar = coleccion_getPublicacion("10.4567/jkl012");
+	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	Investigador * alberto = coleccion_getInvestigador("0000-0001-8765-4321");
+
+	//Elimina la relacion entre la publicacion y sus autores.
+	carla->quitarpublicacion(aBorrar->getDoi());
+	alberto->quitarpublicacion(aBorrar->getDoi());
+
+	//Elimina del main.
+	coleccion_eliminarPublicacion(aBorrar);
+	delete aBorrar;
 }
 
 void parte_j(){
+	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	DTFecha fecha(1,1,2020);
+	vector<string> listado = carla->listarPublicaciones(fecha,"UML");
+
+	for (auto pub : listado) {
+            std::cout << pub << std::endl;
+        }
 }
 
 void parte_k(){
+	for (auto publi : publicaciones)
+	{
+		std::cout<<publi->getDT() << std::endl;
+	}
 }
 
+void cleanUp(){
+	//Libero memoria publicaciones.
+	for (auto publi : publicaciones)
+	{
+		delete publi;
+	}
+	publicaciones.clear();
+	map_publicaciones.clear();
+
+	//Libero memoria investigadores.
+	for (auto investigador : investigadores)
+	{
+		delete investigador;
+	}
+	investigadores.clear();
+	map_investigadores.clear();
+	
+}
 
 int main() {
 	std::cout << "parte_a" <<  std::endl;
@@ -157,8 +197,8 @@ int main() {
 	parte_j();
 	std::cout << "parte_k" <<  std::endl;
 	parte_k();
-//	std::cout << "cleanUp" <<  std::endl;
-//	cleanUp();
+	std::cout << "cleanUp" <<  std::endl;
+	cleanUp();
 	std::cout << "fin" <<  std::endl;
 
 	return 0;
