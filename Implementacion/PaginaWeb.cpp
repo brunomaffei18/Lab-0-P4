@@ -20,7 +20,7 @@
     return this->url;
   }
 
-bool comparar(string contenido, int pos,int ne ,string palabra,int np ){
+bool compararWeb(string contenido, int pos,int ne ,string palabra,int np ){
    int  i=0;
    bool igual=true;
     while (pos<ne && i<np &&igual)
@@ -54,7 +54,7 @@ bool esta=false;
 for (int i = 0; i < largo && !esta; i++)
 {
     if(contenido[i]==palabra[0]){
-     esta=comparar(contenido,i,largo,palabra,palabralargo);
+     esta=compararWeb(contenido,i,largo,palabra,palabralargo);
     }
 }
 

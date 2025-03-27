@@ -3,6 +3,7 @@
 #include <map>
 #include "Contratos/Publicacion.h"
 #include "Contratos/Investigador.h"
+#include "Contratos/DTFecha.h"
 #include "Contratos/DTRefer.h"
 #include "Contratos/ArticuloRevista.h"
 #include "Contratos/PaginaWeb.h"

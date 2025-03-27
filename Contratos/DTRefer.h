@@ -1,3 +1,6 @@
+#ifndef DTREFER_H
+#define DTREFER_H
+
 #include <string>
 #include <iostream>
 #include <vector>
@@ -25,3 +28,5 @@ public:
 };
 
 ostream& operator<<(ostream& os, const DTRefer& dt);
+
+#endif

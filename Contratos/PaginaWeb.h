@@ -1,3 +1,6 @@
+#ifndef PAGINAWEB_H
+#define PAGINAWEB_H
+
 #include <string>
 #include "../Contratos/Publicacion.h"
 class PaginaWeb : public Publicacion{
@@ -15,3 +18,5 @@ public:
  //funciones
     bool contienePalabra(std::string palabra);
 };
+
+#endif

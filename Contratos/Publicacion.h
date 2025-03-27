@@ -1,3 +1,6 @@
+#ifndef PUBLICACION_H
+#define PUBLICACION_H
+
 #include <utility>      
 #include <string>       
 #include <iostream> 
@@ -7,6 +10,7 @@
 #include "../Contratos/DTRefer.h"
 #include "../Contratos/DTFecha.h"
 
+class Investigador;
 class Publicacion{
  private:
   std::string DOI;
@@ -33,3 +37,5 @@ class Publicacion{
  virtual bool contienePalabra(std::string palabra) = 0;
   
 };
+
+#endif

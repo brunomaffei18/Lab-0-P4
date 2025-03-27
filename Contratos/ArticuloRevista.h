@@ -1,3 +1,6 @@
+#ifndef ARTICULOREVISTA_H
+#define ARTICULOREVISTA_H
+
 #include <string>
 #include "../Contratos/Publicacion.h"
 using namespace std;
@@ -16,3 +19,5 @@ public:
 
     bool contienePalabra(std::string palabra);
 };
+
+#endif
