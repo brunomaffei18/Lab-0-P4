@@ -102,15 +102,15 @@ void parte_g(){
 	//Publicaciones de Carla
     for (auto doi : nuevasCarla) {
         Publicacion* publi = coleccion_getPublicacion(doi);
-		carla->agregarPublicacionAInvestigador(publi);
-		publi->setMapInve(carla->getORCID(),carla);
+		carla->agregarPublicacion(publi);
+		publi->agregarInvestigador(carla);
     }
 
 	//Publicaciones de Alberto
     for (auto doi : nuevasAlberto) {
         Publicacion* publi = coleccion_getPublicacion(doi);
-		alberto->agregarPublicacionAInvestigador(publi);
-		publi->setMapInve(alberto->getORCID(),alberto);
+		alberto->agregarPublicacion(publi);
+		publi->agregarInvestigador(alberto);
     }
 }
 
@@ -130,8 +130,8 @@ void parte_i(){
 	Investigador * alberto = coleccion_getInvestigador("0000-0001-8765-4321");
 
 	//Elimina la relacion entre la publicacion y sus autores.
-	carla->quitarpublicacion(aBorrar->getDoi());
-	alberto->quitarpublicacion(aBorrar->getDoi());
+	carla->removerPublicacion(aBorrar->getDoi());
+	alberto->removerPublicacion(aBorrar->getDoi());
 
 	//Elimina del main.
 	coleccion_eliminarPublicacion(aBorrar);
