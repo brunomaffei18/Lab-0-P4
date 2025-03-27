@@ -4,34 +4,31 @@
 
 using namespace std;
 
-DTRefer :: DTRefer(string DOI, string titulo, DTFecha fecha, vector<string>autores){
-    this->fecha = fecha;
-    this->DOI = DOI;
-    this->titulo = titulo;
-    this->autores = autores;
-}
+DTRefer::DTRefer(string DOI, string titulo, const DTFecha& fecha, vector<string> autores)
+    : DOI(DOI), titulo(titulo), fecha(fecha), autores(autores) {}
+
 
 
 //Geters
-string DTRefer:: getDOI(){
+string DTRefer:: getDOI()const{
     return DOI;
 }
 
-string DTRefer:: getTitulo(){
+string DTRefer:: getTitulo()const{
     return titulo;
 }
 
-DTFecha DTRefer :: getFecha(){
+DTFecha DTRefer :: getFecha()const{
     return fecha;
 }
 
-vector<string> DTRefer :: getAutores(){
+vector<string> DTRefer :: getAutores()const{
     return autores;
 }
 
 
 //Funciones
-ostream& operator<<(ostream& os, DTRefer& Refer){
+ostream& operator<<(ostream& os,const DTRefer& Refer){
     os << Refer.getDOI() << "->" << Refer.getTitulo() << " (" << Refer.getFecha() << ") /";
     vector<string> autores = Refer.getAutores();
     for (int i = 0; i < autores.size(); i++)

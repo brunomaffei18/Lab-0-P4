@@ -12,10 +12,13 @@ CC = g++
 
 OPCIONES = -o -g
 
-## al agregar $(OBJETOS) son las dependencias nesessarias para esta instriccion 
+## al agregar $(OBJETOS) son las dependencias nesessarias para esta instriccion $(CC) $(OPCIONES) $(OBJETOS) ./main.cpp -o ./main.o
 ##Makefile al final hace que si alguno de los archivos se altere este vuelva a ejecutar la instriccion 
 ejec: $(OBJETOS) main.cpp makefile
-	$(CC) $(OPCIONES) $(OBJETOS) ./main.cpp -o ./main.o
+	g++ -o principal $(OBJETOS) main.cpp
+
+main.o: main.cpp
+	$(CC) -c main.cpp -o main.o
 
 DTFecha.o: ./Contratos/DTFecha.h ./Implementacion/DTFecha.cpp
 	$(CC) $(OPCIONES) -c ./Implementacion/DTFecha.cpp -o DTFecha.o
@@ -38,7 +41,10 @@ Libro.o: Publicacion.o ./Implementacion/Libro.cpp ./Contratos/Libro.h
 ArticuloRevista.o: Publicacion.o ./Implementacion/ArticuloRevista.cpp ./Contratos/ArticuloRevista.h
 	$(CC) $(OPCIONES) -c ./Implementacion/ArticuloRevista.cpp -o ArticuloRevista.o
  
-Clean:
+clean:
 	rm -f $(OBJETOS) ejec
+
+rebase:
+	make clean && make
 
 ##Entrega Instricion que crearia la entrega 

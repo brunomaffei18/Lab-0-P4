@@ -20,7 +20,7 @@ class Publicacion{
 
  public:
  //Creador
-  Publicacion(std::string DOI, std::string titulo, DTFecha fecha);
+  Publicacion(std::string DOI, std::string titulo, const DTFecha& fecha);
 
  //Getters
   DTFecha getFecha();

@@ -18,11 +18,11 @@ private:
     vector<string> autores;
 
 public:
-    DTRefer(string DOI, string titulo, DTFecha fecha,vector<string>autores);
-    string getTitulo();
-    DTFecha getFecha();
-    vector<string> getAutores();
-    string getDOI();
+    DTRefer(string DOI, string titulo, const DTFecha& fecha,vector<string>autores);
+    string getTitulo()const;
+    DTFecha getFecha()const;
+    vector<string> getAutores()const;
+    string getDOI()const;
     string toString();
 
 };

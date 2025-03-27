@@ -10,12 +10,8 @@
 #include "../Contratos/DTFecha.h"
 
 //Creador
-Publicacion::Publicacion(std::string DOI, std::string titulo, DTFecha fecha){
-    this->DOI = DOI;
-    this->titulo = titulo;
-    this->fecha = fecha;
-};
-
+Publicacion::Publicacion(std::string DOI, std::string titulo, const DTFecha& fecha)
+    : DOI(DOI), titulo(titulo), fecha(fecha) {}
 
 //Geters
 std::string Publicacion::getTitulo(){

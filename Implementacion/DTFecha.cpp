@@ -6,13 +6,13 @@ DTFecha::DTFecha(int dia,int mes,int anio){
     this->Anio=anio;
 }
 
-int DTFecha::getDia(){
+int DTFecha::getDia()const{
     return this->Dia;
 }
-int DTFecha::getMes(){
+int DTFecha::getMes()const{
     return this->Mes;
 }
-int DTFecha::getAnio(){
+int DTFecha::getAnio()const{
     return this->Anio;
 }
 
@@ -53,7 +53,7 @@ int DTFecha::getAnio(){
     
 }
 
-std::ostream& operator<<(std::ostream& os, DTFecha& dt){
+std::ostream& operator<<(std::ostream& os, const DTFecha& dt){
     os << dt.getDia() << "/" << dt.getMes() << "/" << dt.getAnio();
     return os;
 }
