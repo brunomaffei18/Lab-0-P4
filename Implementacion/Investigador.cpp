@@ -10,8 +10,8 @@ Investigador::Investigador(std::string nombre,  std::string orcid ,std::string i
 
 }
 
-//Geters
 
+//Geters
 string Investigador::getInstitucion(){
   return Institucion;
 }
@@ -26,7 +26,17 @@ string Investigador::getNombre(){
 map<string,Publicacion*> Investigador::getMapPub(){
   return this->misPub;
 }
-//Funciones
+
+
+//Manejo de Publicaciones.
+void Investigador:: agregarPublicacion(Publicacion*Pub){
+    misPub.insert(std::pair<string,Publicacion*>(Pub->getDoi(),Pub));
+}
+
+void Investigador::removerPublicacion(string DOI){
+    misPub.erase(DOI);
+}
+
 vector<string> Investigador::listarPublicaciones(DTFecha desde,string DOI){
   vector <string> resultado;
   
@@ -43,17 +53,9 @@ vector<string> Investigador::listarPublicaciones(DTFecha desde,string DOI){
   
   return resultado;
 }
-void Investigador:: agregarPublicacionAInvestigador(Publicacion*Pub){
-       misPub.insert(std::pair<string,Publicacion*>(Pub->getDoi(),Pub));
-}
 
 
-void Investigador::quitarpublicacion(string DOI){
- misPub.erase(DOI);
- 
-}
-
-
+//Funciones
 string Investigador::toString() {
     return ORCID + "->" + Nombre + "/" + Institucion;
 }
