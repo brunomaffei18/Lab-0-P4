@@ -21,9 +21,9 @@ private:
   string Institucion;
   map<string,Publicacion* >misPub;
 public:
-  //Creador y Destructor
+  //Creador
     Investigador(string nombre,  string orcid ,string institucion);
-    ~Investigador();
+
   //Geters
     string getORCID();
     string getInstitucion();

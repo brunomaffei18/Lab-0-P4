@@ -19,9 +19,8 @@ class Publicacion{
   map <std::string, Investigador*> misInvestigadores;
 
  public:
- //Creador y Destructor
+ //Creador
   Publicacion(std::string DOI, std::string titulo, DTFecha fecha);
-  ~Publicacion();
 
  //Getters
   DTFecha getFecha();
