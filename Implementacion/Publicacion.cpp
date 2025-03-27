@@ -9,15 +9,39 @@
 #include "../Contratos/DTRefer.h"
 #include "../Contratos/DTFecha.h"
 
-
+//Creador
 Publicacion::Publicacion(std::string DOI, std::string titulo, DTFecha fecha){
     this->DOI = DOI;
     this->titulo = titulo;
     this->fecha = fecha;
-
-    
 };
 
+
+//Geters
+std::string Publicacion::getTitulo(){
+    return titulo;
+}
+
+std::string Publicacion::getDoi(){
+    return DOI;
+}
+
+DTFecha Publicacion::getFecha(){
+    return fecha;
+}
+
+
+//Manejo de Investigadores.
+void Publicacion::agregarInvestigador(Investigador* Inv){
+    misInvestigadores.insert(std::pair<std::string, Investigador*>(Inv->getORCID(), Inv));
+}
+
+void Publicacion::removerInvestigador(string orcidInve){
+    misInvestigadores.erase(orcidInve);
+}
+
+
+//Funciones
 DTRefer Publicacion::getDT(){
     std::vector<std::string>autores;
     for (auto i = misInvestigadores.begin(); i != misInvestigadores.end(); i++)
@@ -29,13 +53,4 @@ DTRefer Publicacion::getDT(){
     return Refer;
 }
 
-void Publicacion::setMapInve(string orcidInve, Investigador* Inv){
-    misInvestigadores.insert(std::pair<std::string, Investigador*>(orcidInve, Inv));
-}
-
-void Publicacion::unSetMapInve(string orcidInve){
-    misInvestigadores.erase(orcidInve);
-
-}
-
-//No se implelemnta contien Palabara
+//No se debe implementar contienePalabara

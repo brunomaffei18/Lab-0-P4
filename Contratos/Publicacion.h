@@ -1,6 +1,3 @@
-#ifndef PUBLICACION_H
-#define PUBLICACION_H
-
 #include <utility>      
 #include <string>       
 #include <iostream> 
@@ -15,31 +12,24 @@ class Publicacion{
   std::string DOI;
   std::string titulo;
   DTFecha fecha;
-  map <std::string, Investigador*> misInvestigadores; //me parece que el orden es al reves, el primer valor seria la clave osea string y el segundo la clave es decir Investigador
-
+  map <std::string, Investigador*> misInvestigadores;
 
  public:
- //creadores
+ //Creador y Destructor
   Publicacion(std::string DOI, std::string titulo, DTFecha fecha);
- //destructores
   ~Publicacion();
- //getters
 
-  DTFecha getFechaPub();
+ //Getters
+  DTFecha getFecha();
   std::string getTitulo();
   std::string getDoi();
- //setters 
-  void setMapInve(string, Investigador *Investigador);
-  void unSetMapInve(string);
+
+ //Manejo de Autores 
+  void agregarInvestigador(Investigador *Investigador);
+  void removerInvestigador(string);
 
  //Funciones
  DTRefer getDT();
- //virtula y =0 parar que sea abstracta
  virtual bool contienePalabra(std::string palabra) = 0;
- void imprimir();
   
 };
-
-
-
-#endif
