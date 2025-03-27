@@ -44,7 +44,7 @@ vector<string> Investigador::listarPublicaciones(DTFecha desde,string DOI){
   {
   
     Publicacion*pub=it->second;
-    if (pub->getFechaPub().esPosterior(desde)==true){
+    if (pub->getFecha().esPosterior(desde)==true){
     if (it->first==DOI ){
       resultado.push_back(pub->getDoi());
     }
