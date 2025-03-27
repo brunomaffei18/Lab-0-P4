@@ -15,9 +15,45 @@ string ArticuloRevista::getRevista(){
     return this->revista;
 }
 
+bool comparar(string extracto, int pos,int ne ,string palabra,int np ){
+   int  i=0;
+   bool igual=true;
+    while (pos<ne && i<np &&igual)
+    {
+        if (extracto[pos]!=palabra[i])
+        {
+            igual=false;
+        }
+        pos++;
+        i++;
+        
+    }
+    if(pos-ne>0 && extracto[pos-np-1]==' '){
+    
+        igual=false;
+      
+    }
+if (pos<ne && extracto[pos]==' ')
+{
+    igual=false;
+}
+    return igual;
 
+}
 
 bool ArticuloRevista::contienePalabra(string palabra){
-    return extracto.find(palabra)!=string::npos;
+int largo=extracto.size();
+int palabralargo=palabra.size();
+bool esta=false; 
+for (int i = 0; i < largo && !esta; i++)
+{
+    if(extracto[i]==palabra[0]){
+     esta=comparar(extracto,i,largo,palabra,palabralargo);
+    }
+}
+
+
+
+    return esta;
 
 }
