@@ -71,9 +71,10 @@ void parte_c(){
 }
 
 void parte_d(){
-	for (auto publi : publicaciones)
+	
+	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it)
 	{
-		std::cout<<publi->getDT() << std::endl;
+		std::cout<<(*it)->getDT() << std::endl;
 	}
 }
 
@@ -86,9 +87,10 @@ void parte_e(){
 }
 
 void parte_f(){
-	for (auto persona : investigadores)
+	
+	for (std::list<Investigador*>::iterator it = investigadores.begin(); it != investigadores.end(); ++it)
 	{
-		std::cout<< persona->toString() << std::endl;
+		std::cout<< (*it)->toString() << std::endl;
 	}
 	
 }
@@ -101,15 +103,16 @@ void parte_g(){
     std::vector<std::string> nuevasAlberto = {"10.1234/abc123","10.2345/def456","10.4567/jkl012"};
 
 	//Publicaciones de Carla
-    for (auto doi : nuevasCarla) {
-        Publicacion* publi = coleccion_getPublicacion(doi);
+	
+    for (std::vector<std::string>::iterator it = nuevasCarla.begin(); it != nuevasCarla.end(); it++) {
+        Publicacion* publi = coleccion_getPublicacion(*it);
 		carla->agregarPublicacion(publi);
 		publi->agregarInvestigador(carla);
     }
 
 	//Publicaciones de Alberto
-    for (auto doi : nuevasAlberto) {
-        Publicacion* publi = coleccion_getPublicacion(doi);
+    for (std::vector<std::string>::iterator it = nuevasAlberto.begin(); it != nuevasAlberto.end(); it++) {
+        Publicacion* publi = coleccion_getPublicacion(*it);
 		alberto->agregarPublicacion(publi);
 		publi->agregarInvestigador(alberto);
     }
@@ -120,8 +123,8 @@ void parte_h(){
 	DTFecha fecha(10,12,2023);
 	vector<string> listado = carla->listarPublicaciones(fecha,"UML");
 
-	for (auto pub : listado) {
-            std::cout << pub << std::endl;
+	for (std::vector<std::string>::iterator it = listado.begin(); it != listado.end(); it++) {
+            std::cout << (*it) << std::endl;
         }
 }
 
@@ -138,37 +141,36 @@ void parte_i(){
 	coleccion_eliminarPublicacion(aBorrar);
 	delete aBorrar;
 }
-
 void parte_j(){
 	Investigador * carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	DTFecha fecha(1,1,2020);
 	vector<string> listado = carla->listarPublicaciones(fecha,"UML");
 
-	for (auto pub : listado) {
-            std::cout << pub << std::endl;
-        }
+	for (std::vector<std::string>::iterator it = listado.begin(); it != listado.end(); it++) {
+		std::cout << *it << std::endl;
+	}
 }
 
 void parte_k(){
-	for (auto publi : publicaciones)
+	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it)
 	{
-		std::cout<<publi->getDT() << std::endl;
+		std::cout<<(*it)->getDT() << std::endl;
 	}
 }
 
 void cleanUp(){
 	//Libero memoria publicaciones.
-	for (auto publi : publicaciones)
+	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it)
 	{
-		delete publi;
+		delete *it;
 	}
 	publicaciones.clear();
 	map_publicaciones.clear();
 
 	//Libero memoria investigadores.
-	for (auto investigador : investigadores)
+	for (std::list<Investigador*>::iterator it = investigadores.begin(); it != investigadores.end(); ++it)
 	{
-		delete investigador;
+		delete *it;
 	}
 	investigadores.clear();
 	map_investigadores.clear();
