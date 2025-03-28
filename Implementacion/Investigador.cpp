@@ -39,18 +39,17 @@ void Investigador::removerPublicacion(string DOI){
 
 vector<string> Investigador::listarPublicaciones(DTFecha desde,string DOI){
   vector <string> resultado;
-  
-  for (auto it= misPub.begin(); it != misPub.end(); ++it)
+
+  for (std::map<std::string, Publicacion*>::iterator it = misPub.begin(); it != misPub.end(); ++it)
   {
-  
-    Publicacion*pub=it->second;
+    Publicacion *pub=it->second;
     if (pub->getFecha().esPosterior(desde)==true){
-    if (it->first==DOI ){
-      resultado.push_back(pub->getDoi());
-    }
+      if (it->first==DOI ){
+        resultado.push_back(pub->getDoi());
+      }
     }
   }
-  
+
   return resultado;
 }
 

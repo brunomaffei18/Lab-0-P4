@@ -40,11 +40,11 @@ void Publicacion::removerInvestigador(string orcidInve){
 //Funciones
 DTRefer Publicacion::getDT(){
     std::vector<std::string>autores;
-    for (auto i = misInvestigadores.begin(); i != misInvestigadores.end(); i++)
-    {
-        autores.push_back(i->second->getNombre());
-    }
     
+    for (std::map<std::string, Investigador*>::iterator it = misInvestigadores.begin(); it != misInvestigadores.end(); ++it)
+    {
+        autores.push_back(it->second->getNombre());
+    }
     DTRefer Refer = DTRefer(DOI,titulo,fecha,autores);
     return Refer;
 }
