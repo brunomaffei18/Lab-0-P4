@@ -26,6 +26,7 @@ class Publicacion{
   DTFecha getFecha();
   std::string getTitulo();
   std::string getDoi();
+  map <std::string, Investigador*> getMapInv();
 
  //Manejo de Autores 
   void agregarInvestigador(Investigador *Investigador);

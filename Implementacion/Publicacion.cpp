@@ -26,6 +26,9 @@ DTFecha Publicacion::getFecha(){
     return fecha;
 }
 
+map <std::string, Investigador*> Publicacion::getMapInv(){
+    return misInvestigadores;
+  }
 
 //Manejo de Investigadores.
 void Publicacion::agregarInvestigador(Investigador* Inv){

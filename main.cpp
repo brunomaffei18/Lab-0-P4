@@ -31,6 +31,11 @@ void coleccion_guardarInvestigador(Investigador* inv){
     map_investigadores.insert(entry);
 }
 
+void coleccion_eliminarInvestigador(Investigador* inv){
+	investigadores.remove(inv);
+	map_investigadores.erase(inv->getORCID());
+}
+
 Investigador* coleccion_getInvestigador(std::string ORCID){
 	return map_investigadores[ORCID];
 }
@@ -137,6 +142,8 @@ void parte_i(){
 	carla->removerPublicacion(aBorrar->getDoi());
 	alberto->removerPublicacion(aBorrar->getDoi());
 
+	aBorrar->getMapInv().clear();
+
 	//Elimina del main.
 	coleccion_eliminarPublicacion(aBorrar);
 	delete aBorrar;
@@ -160,9 +167,12 @@ void parte_k(){
 
 void cleanUp(){
 	//Libero memoria publicaciones.
+
 	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it)
 	{
-		delete *it;
+		(*it)->getMapInv().clear();
+
+		delete (*it);
 	}
 	publicaciones.clear();
 	map_publicaciones.clear();
@@ -170,7 +180,8 @@ void cleanUp(){
 	//Libero memoria investigadores.
 	for (std::list<Investigador*>::iterator it = investigadores.begin(); it != investigadores.end(); ++it)
 	{
-		delete *it;
+		(*it)->getMapPub().clear();
+		delete (*it);
 	}
 	investigadores.clear();
 	map_investigadores.clear();
